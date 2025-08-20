@@ -1,1 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generator Installation Jurisdiction Reference Guide</title>
 
+  <!-- PWA bits -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#2c3e50">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height:1.6;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height:100vh;
+      padding:20px;
+    }
+    .container {
+      max-width:1400px; margin:0 auto; background:#fff;
+      border-radius:15px; box-shadow:0 20px 40px rgba(0,0,0,.1); overflow:hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+      color:#fff; padding:40px; text-align:center;
+    }
+    .header h1 { font-size:2.5rem; margin-bottom:10px; font-weight:300; }
+    .header p { font-size:1.1rem; opacity:.9; }
+
+    .verification-banner {
+      background:#27ae60; color:#fff; padding:15px; text-align:center; font-weight:500;
+    }
+
+    .navigation {
+      background:#34495e; padding:20px;
+      display:flex; flex-wrap:wrap; gap:10px; justify-content:center;
+    }
+    .nav-btn {
+      display:inline-block; text-decoration:none; user-select:none;
+      background:#3498db; color:#fff; border:none; padding:10px 20px; border-radius:25px;
+      transition:all .3s ease; font-size:.9rem;
+    }
+    .nav-btn:hover { background:#2980b9; transform:translateY(-2px); }
+    .nav-btn.active { background:#e74c3c; }
+
+    .main-content { padding:40px; }
+
+    .jurisdiction-card { display:none; }
+    .jurisdiction-card:target {
+      display:block; animation:fadeIn .5s ease;
+    }
+    /* Default view: show Overview when there is no #hash */
+    #overview { display:block; }
+    /* If any section is targeted, hide the default Overview card */
+    body:has(.jurisdiction-card:target) #overview { display:none; }
+
+    @keyframes fadeIn {
+      from { opacity:0; transform: translateY(20px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+
+    .card-header {
+      background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+      color:#fff; padding:30px; border-radius:15px 15px 0 0; margin:-20px -20px 30px -20px;
+    }
+    .card-header h2 { font-size:2rem; margin-bottom:10px; }
+    .verification-info {
+      background: rgba(255,255,255,0.2); padding:10px 15px; border-radius:8px; margin-top:15px; font-size:.9rem;
+    }
+
+    .alert { padding:15px; border-radius:8px; margin-bottom:20px; }
+    .alert.success { background:#d4edda; border:1px solid #c3e6cb; color:#155724; }
+    .alert.info    { background:#d1ecf1; border:1px solid #bee5eb; color:#0c5460; }
+    .alert.warning { background:#fff3cd; border:1px solid #ffeaa7; color:#856404; }
+
+    .requirements-grid { display:grid; gap:30px; margin-bottom:40px; }
+    .requirement-section {
+      background:#f8f9fa; border-radius:10px; padding:25px; border-left:5px solid #3498db;
+    }
+    .requirement-section h3 { color:#2c3e50; margin-bottom:15px; font-size:1.3rem; }
+    .requirement-content { color:#555; line-height:1.7; }
+
+    .calculation-example {
+      background:#e8f5e8; border:1px solid #27ae60; padding:15px; border-radius:8px; margin-top:15px; font-family:monospace; font-size:.95rem;
+    }
+
+    .checklist {
+      background:#e8f5e8; border-radius:10px; padding:25px; border-left:5px solid #27ae60; margin-bottom:30px;
+    }
+    .checklist h3 { color:#27ae60; margin-bottom:20px; font-size:1.3rem; }
+    .checklist-item {
+      display:flex; align-items:flex-start; gap:15px; margin-bottom:15px; padding:15px;
+      background:#fff; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,.05);
+    }
+
+    .contacts { background:#fff3cd; border-radius:10px; padding:25px; border-left:5px solid #ffc107; }
+    .contacts h3 { color:#856404; margin-bottom:20px; }
+    .contact-item {
+      background:#fff; padding:15px; border-radius:8px; margin-bottom:10px;
+      display:flex; justify-content:space-between; align-items:center;
+    }
+
+    .search-box { margin-bottom:30px; position:relative; }
+    .search-box input {
+      width:100%; padding:15px 50px 15px 20px; border:2px solid #ddd; border-radius:25px; font-size:1rem; outline:none;
+    }
+    .search-icon {
+      position:absolute; right:20px; top:50%; transform:translateY(-50%); color:#999;
+    }
+
+    .glossary-grid {
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+      gap:20px; margin:20px 0;
+    }
+    .glossary-item {
+      background:#fff; padding:20px; border-radius:10px; border-left:4px solid #9b59b6; box-shadow:0 2px 5px rgba(0,0,0,.05);
+    }
+    .glossary-term { font-weight:600; color:#2c3e50; margin-bottom:8px; }
+
+    .nfip-table { width:100%; border-collapse:collapse; margin:20px 0; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,.1); }
+    .nfip-table th { background:#3498db; color:#fff; padding:15px; text-align:left; font-weight:500; }
+    .nfip-table td { padding:12px 15px; border-bottom:1px solid #eee; }
+    .nfip-table tr:hover { background:#f8f9fa; }
+
+    @media (max-width: 768px) {
+      .header h1 { font-size:2rem; }
+      .main-content { padding:20px; }
+      .navigation { padding:15px; }
+      .nav-btn { font-size:.8rem; padding:8px 15px; }
+    }
+
+    /* ---------- Pure-CSS Active Nav Highlighting ---------- */
+    .navigation a[href="#overview"] { }
+    body:not(:has(.jurisdiction-card:target)) .navigation a[href="#overview"] { background:#e74c3c; }
+    body:has(#overview:target)    .navigation a[href="#overview"],
+    body:has(#glossary:target)    .navigation a[href="#glossary"],
+    body:has(#ascension:target)   .navigation a[href="#ascension"],
+    body:has(#jefferson:target)   .navigation a[href="#jefferson"],
+    body:has(#gonzales:target)    .navigation a[href="#gonzales"],
+    body:has(#covington:target)   .navigation a[href="#covington"],
+    body:has(#ebr:target)         .navigation a[href="#ebr"],
+    body:has(#stjohn:target)      .navigation a[href="#stjohn"],
+    body:has(#mandeville:target)  .navigation a[href="#mandeville"],
+    body:has(#neworleans:target)  .navigation a[href="#neworleans"],
+    body:has(#rapides:target)     .navigation a[href="#rapides"],
+    body:has(#sttammany:target)   .navigation a[href="#sttammany"],
+    body:has(#wbr:target)         .navigation a[href="#wbr"] {
+      background:#e74c3c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Generator Installation Jurisdiction Reference Guide</h1>
+      <p>Complete requirements for selling and installing generators across all jurisdictions</p>
+    </div>
+
+    <div class="verification-banner">
+      Verification Date: August 19, 2025 | All data subject to change - confirm with local floodplain manager
+    </div>
+
+    <!-- No-JS navigation: anchors -->
+    <div class="navigation">
+      <a class="nav-btn" href="#overview">Overview</a>
+      <a class="nav-btn" href="#glossary">Glossary & NFIP</a>
+      <a class="nav-btn" href="#ascension">Ascension Parish</a>
+      <a class="nav-btn" href="#jefferson">Jefferson Parish</a>
+      <a class="nav-btn" href="#gonzales">City of Gonzales</a>
+      <a class="nav-btn" href="#covington">Covington</a>
+      <a class="nav-btn" href="#ebr">East Baton Rouge</a>
+      <a class="nav-btn" href="#stjohn">St. John Parish</a>
+      <a class="nav-btn" href="#mandeville">Mandeville</a>
+      <a class="nav-btn" href="#neworleans">New Orleans</a>
+      <a class="nav-btn" href="#rapides">Rapides Parish</a>
+      <a class="nav-btn" href="#sttammany">St. Tammany Parish</a>
+      <a class="nav-btn" href="#wbr">West Baton Rouge</a>
+    </div>
+
+    <div class="main-content">
+      <!-- (all your sections unchanged; omitted here for brevity) -->
+      <!-- Keep all the jurisdiction sections exactly as you pasted -->
+      <!-- ... [your existing HTML content for sections] ... -->
+
+      <!-- Start of your existing sections -->
+      <!-- Paste everything from your version here (Overview... West Baton Rouge) -->
+      <!-- End of your existing sections -->
+
+    </div>
+  </div>
+
+  <!-- Register the service worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js').catch(console.error);
+      });
+    }
+  </script>
+</body>
+</html>
