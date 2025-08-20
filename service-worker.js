@@ -1,5 +1,5 @@
 // service-worker.js
-const CACHE_NAME = 'generator-guide-v1';
+const CACHE_NAME = 'generator-guide-v3';
 
 // Cache the core files needed offline
 const PRECACHE = [
