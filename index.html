@@ -49,9 +49,7 @@
     .main-content { padding:40px; }
 
     .jurisdiction-card { display:none; }
-    .jurisdiction-card:target {
-      display:block; animation:fadeIn .5s ease;
-    }
+    .jurisdiction-card:target { display:block; animation:fadeIn .5s ease; }
     /* Default view: show Overview when there is no #hash */
     #overview { display:block; }
     /* If any section is targeted, hide the default Overview card */
@@ -181,14 +179,589 @@
     </div>
 
     <div class="main-content">
-      <!-- (all your sections unchanged; omitted here for brevity) -->
-      <!-- Keep all the jurisdiction sections exactly as you pasted -->
-      <!-- ... [your existing HTML content for sections] ... -->
+      <!-- === ALL SECTIONS START === -->
 
-      <!-- Start of your existing sections -->
-      <!-- Paste everything from your version here (Overview... West Baton Rouge) -->
-      <!-- End of your existing sections -->
+      <!-- Overview -->
+      <div id="overview" class="jurisdiction-card">
+        <div class="card-header">
+          <h2>Overview & Quick Reference</h2>
+          <p>Complete requirements verified August 19, 2025</p>
+        </div>
 
+        <div class="search-box">
+          <input type="text" placeholder="Search jurisdictions (open in Safari for full features)"/>
+          <span class="search-icon">🔍</span>
+        </div>
+
+        <div class="alert info">
+          <strong>Critical:</strong> ALL jurisdictions require elevation certificates in flood zones. Key requirements apply to generator height, elevation certificates, pre-construction ECs, and final ECs.
+        </div>
+
+        <div class="alert warning">
+          <strong>Universal Requirements:</strong> All projects require BOM, Load Data Sheet, BTU Calculator, Assessor Records, Generator Install Guidelines, Job Notes, Signed Sketch (with CO detectors), Signed Contract/Scope of Work, Generator Spec Sheet, and Generator Proposal.
+        </div>
+
+        <div class="requirements-grid">
+          <div class="requirement-section">
+            <h3>Overview & Formula</h3>
+            <div class="requirement-content">
+              <strong>Must be at minimum base elevation of home OR higher per jurisdiction freeboard requirements</strong>
+              <div class="calculation-example">
+                <strong>Elevation Formula:</strong><br>
+                BFE + Freeboard - Lowest Adjacent Grade = Minimum height above ground<br><br>
+                <strong>Example:</strong> BFE 71.0' + 2' freeboard - 68.4' grade = 4.6' (round up to 5.0')<br><br>
+                <strong>Note:</strong> Always round up to the closest foot to add cushion
+              </div>
+            </div>
+          </div>
+
+          <div class="requirement-section">
+            <h3>Flood Zone Classifications</h3>
+            <div class="requirement-content">
+              <strong>High Risk Zones:</strong><br>
+              • <strong>Zone A:</strong> 1% annual chance of flooding (100-year flood)<br>
+              • <strong>Zone AE:</strong> Similar to Zone A, but with base flood elevations (BFEs)<br>
+              • <strong>Zone AH:</strong> Shallow flooding (1-3 feet deep) within 100-year floodplain<br>
+              • <strong>Zone AO:</strong> Shallow flooding (1-3 feet deep) along rivers and streams<br>
+              • <strong>Zone AR:</strong> Temporarily increased flood risk due to flood control systems<br>
+              • <strong>Zone A99:</strong> Protected by Federal flood control systems<br>
+              • <strong>Zone V:</strong> Coastal areas with high storm surge and wave action risk<br>
+              • <strong>Zone VE:</strong> Coastal areas with wave heights >3 feet during storms
+            </div>
+          </div>
+
+          <div class="requirement-section">
+            <h3>Useful Resources</h3>
+            <div class="requirement-content">
+              <strong>Flood Zone Maps:</strong><br>
+              • LSU Ag Maps: maps.lsuagcenter.com/floodmaps<br>
+              • FEMA Maps: msc.fema.gov/portal/search<br>
+              • FloodSmart.gov<br><br>
+              <strong>Surveying Companies:</strong><br>
+              • KLS Group: info@klsgroupinc.com<br>
+              • Gilbert, Kelly & Coururie: karen@gkcsurveyors.com<br>
+              • Dading & Marques: info@dadingmarques.net<br>
+              • J Couvillon
+            </div>
+          </div>
+
+          <div class="requirement-section">
+            <h3>Risk Mitigation Tips</h3>
+            <div class="requirement-content">
+              • Recommend flood vents or enclosures for platforms to allow water equalization<br>
+              • Note potential insurance discounts (up to 30%) for exceeding NFIP minimums<br>
+              • Advise anchoring generators against flotation and using flood-resistant materials<br>
+              • Suggest annual maintenance checks post-hurricane season
+            </div>
+          </div>
+
+          <div class="requirement-section">
+            <h3>Key Sales Points</h3>
+            <div class="requirement-content">
+              • Budget for ECs: All jurisdictions require elevation certificates - build into quotes<br>
+              • Timing: Some require pre-construction ECs with permit applications<br>
+              • Height Requirements: Most require BFE + 1-2 feet freeboard<br>
+              • Professional Requirements: Many require professional engineer/surveyor certification<br>
+              • Property Location Matters: Even outside flood zones, some properties may require ECs<br>
+              • Document Communications: All communications with administrators for audit trails
+            </div>
+          </div>
+        </div>
+
+        <div class="alert warning">
+          <strong>Compliance and Legal Notes:</strong> Generators are 'mechanical equipment' under NFIP; non-compliance risks permit denial, fines, or voided insurance. Always adhere to local ordinances and FEMA guidelines.
+        </div>
+      </div>
+
+      <!-- Glossary & NFIP -->
+      <div id="glossary" class="jurisdiction-card">
+        <div class="card-header">
+          <h2>Glossary & NFIP Quick Reference</h2>
+          <p>Essential terms and federal requirements</p>
+        </div>
+
+        <div class="glossary-grid">
+          <div class="glossary-item">
+            <div class="glossary-term">BFE (Base Flood Elevation)</div>
+            <div>The computed elevation to which floodwater is anticipated to rise during the base flood (1% annual chance flood).</div>
+          </div>
+          <div class="glossary-item">
+            <div class="glossary-term">Freeboard</div>
+            <div>Additional height above the BFE (typically 1-2 feet) required by local ordinances for added safety and potential insurance benefits.</div>
+          </div>
+          <div class="glossary-item">
+            <div class="glossary-term">EC (Elevation Certificate)</div>
+            <div>A FEMA form documenting a structure's elevation relative to the BFE, required for NFIP compliance.</div>
+          </div>
+          <div class="glossary-item">
+            <div class="glossary-term">SFHA (Special Flood Hazard Area)</div>
+            <div>Areas subject to inundation by the base flood (Zones A, AE, AH, AO, AR, A99, V, VE).</div>
+          </div>
+          <div class="glossary-item">
+            <div class="glossary-term">NFIP</div>
+            <div>National Flood Insurance Program - Federal program providing flood insurance and regulating development in floodplains.</div>
+          </div>
+        </div>
+
+        <div class="requirement-section">
+          <h3>NFIP Quick Reference for Mechanical Equipment</h3>
+          <div class="requirement-content">
+            <table class="nfip-table">
+              <thead><tr><th>NFIP Requirement</th><th>Details</th></tr></thead>
+              <tbody>
+                <tr><td>Elevation</td><td>Above BFE (or local freeboard) in SFHAs; anchor to resist flotation/collapse.</td></tr>
+                <tr><td>Floodproofing Alternative</td><td>Dry floodproofing (watertight) allowed in non-residential; not typical for generators.</td></tr>
+                <tr><td>Materials</td><td>Flood-resistant (e.g., concrete platforms); per FEMA Technical Bulletin 2 (2025 update).</td></tr>
+                <tr><td>Zones</td><td>V/VE: Elevated on piles/open foundations; wave action considerations.</td></tr>
+              </tbody>
+            </table>
+            <p>Source: FEMA NFIP</p>
+          </div>
+        </div>
+
+        <div class="alert warning">
+          <strong>Compliance:</strong> Generators are 'mechanical equipment' under NFIP; non-compliance risks permit denial, fines, or voided insurance.
+        </div>
+      </div>
+
+      <!-- Ascension Parish -->
+      <div id="ascension" class="jurisdiction-card">
+        <div class="card-header">
+          <h2>Ascension Parish</h2>
+          <p>Last Updated: August 19, 2025</p>
+          <div class="verification-info">Source: Ascension Parish Floodplain Management Ordinance and website</div>
+        </div>
+
+        <div class="alert success">
+          <strong>EC Required: Yes</strong><br>
+          Critical: Must use approved Ascension Parish Benchmark ONLY on EC. Final EC required before generator final inspection.
+        </div>
+
+        <div class="requirements-grid">
+          <div class="requirement-section">
+            <h3>Elevation Requirements</h3>
+            <div class="requirement-content">
+              <strong>Shaded X Zone:</strong> BFE + 2 feet (unless in approved subdivision - then no EC needed)<br>
+              <strong>AE Zone:</strong> BFE + 2 feet (or BFE + 1 foot if in approved subdivision)<br>
+              Must use noncombustible platform/stand.
+              <div class="calculation-example">
+                <strong>Example (AE Zone):</strong><br>
+                BFE 71.0' + 2' freeboard - 68.4' lowest adjacent grade = 4.6' → round up to 5'
+              </div>
+            </div>
+          </div>
+
+          <div class="requirement-section">
+            <h3>Flood Zones</h3>
+            <div class="requirement-content">
+              <strong>Applies to:</strong> Shaded X (special rules), AE and similar zones<br>
+              Different requirements may apply based on approved subdivisions.
+            </div>
+          </div>
+
+          <div class="requirement-section">
+            <h3>Required Submittals</h3>
+            <div class="requirement-content">
+              • Final Elevation Certificate with approved parish benchmark<br>
+              • Platform/stand design details<br>
+              • Generator specifications<br>
+              • Proof of subdivision approval (if applicable)
+            </div>
+          </div>
+        </div>
+
+        <div class="checklist">
+          <h3>Installation Checklist</h3>
+          <div class="checklist-item"><input type="checkbox"> <label><strong>Verify flood zone:</strong> Determine if Shaded X or AE zone</label></div>
+          <div class="checklist-item"><input type="checkbox"> <label><strong>Check subdivision status:</strong> Determine if in approved subdivision for special rules</label></div>
+          <div class="checklist-item"><input type="checkbox"> <label><strong>Set approved benchmark:</strong> Use only Ascension Parish approved benchmark</label></div>
+          <div class="checklist-item"><input type="checkbox"> <label><strong>Design noncombustible platform:</strong> Meet elevation requirements</label></div>
+          <div class="checklist-item"><input type="checkbox"> <label><strong>Get Final EC:</strong> Required before final inspection</label></div>
+        </div>
+
+        <div class="contacts">
+          <h3>Local Contacts</h3>
+          <div class="contact-item"><span><strong>Marcia Shivers</strong></span><span>marcia.shivers@apgov.us</span></div>
+          <div class="contact-item"><span><strong>Mia Todd</strong></span><span>mia.todd@apgov.us</span></div>
+          <div class="contact-item"><span><strong>Main Office</strong></span><span>225-450-1200</span></div>
+        </div>
+      </div>
+
+      <!-- Jefferson Parish -->
+      <div id="jefferson" class="jurisdiction-card">
+        <div class="card-header">
+          <h2>Jefferson Parish</h2>
+          <p>Last Updated: August 19, 2025</p>
+          <div class="verification-info">Source: Jefferson Parish Floodplain Management | Updated planning map Aug 14, 2025</div>
+        </div>
+
+        <div class="alert success">
+          <strong>EC Required: Yes</strong><br>
+          Special Notes: Need tape measurement of home base elevation at time of IHC (Initial Home Consultation).
+        </div>
+
+        <div class="requirements-grid">
+          <div class="requirement-section">
+            <h3>Elevation Requirements</h3>
+            <div class="requirement-content">
+              <strong>Requirements:</strong> Generator must be at minimum base elevation of home<br>
+              <strong>When EC Needed:</strong> When installing lower than home base elevation OR due to property location
+              <div class="calculation-example">
+                <strong>Example:</strong><br>
+                Home base elevation 72.0' - 69.5' grade = 2.5' → round up to 3'
+              </div>
+            </div>
+          </div>
+
+          <div class="requirement-section">
+            <h3>Required Submittals</h3>
+            <div class="requirement-content">
+              • Tape measurement of home base elevation (during IHC)<br>
+              • Elevation certificate as required<br>
+              • Generator specifications<br>
+              • Installation details and platform design
+            </div>
+          </div>
+        </div>
+
+        <div class="contacts">
+          <h3>Local Contacts</h3>
+          <div class="contact-item"><span><strong>Eastbank Office</strong></span><span>504-736-6965</span></div>
+          <div class="contact-item"><span><strong>Westbank Office</strong></span><span>504-364-3694</span></div>
+          <div class="contact-item"><span><strong>Maggie Talley</strong></span><span>maggie.talley@jeffparish.gov | 504-736-6541</span></div>
+        </div>
+      </div>
+
+      <!-- City of Gonzales -->
+      <div id="gonzales" class="jurisdiction-card">
+        <div class="card-header">
+          <h2>City of Gonzales</h2>
+          <p>Last Updated: August 19, 2025</p>
+          <div class="verification-info">Source: Gonzales Code of Ordinances Chapter 10</div>
+        </div>
+
+        <div class="alert success">
+          <strong>EC Required: Yes</strong><br>
+          Freeboard: 2 feet | Professional engineer/architect certification required
+        </div>
+
+        <div class="requirements-grid">
+          <div class="requirement-section">
+            <h3>Elevation Requirements</h3>
+            <div class="requirement-content">
+              <strong>Requirements:</strong> Utilities and machinery must be BFE + 2 feet<br>
+              <strong>Flood Zones:</strong> AE zones only<br>
+              <strong>Certification:</strong> Professional engineer/architect certification required
+              <div class="calculation-example">
+                <strong>Example:</strong><br>
+                BFE 70.0' + 2' freeboard - 67.0' grade = 5.0' above ground
+              </div>
+            </div>
+          </div>
+
+          <div class="requirement-section">
+            <h3>Required Submittals</h3>
+            <div class="requirement-content">
+              • Signed compliance certification<br>
+              • Professional engineer/architect certification<br>
+              • Platform elevation details<br>
+              • Generator specifications
+            </div>
+          </div>
+        </div>
+
+        <div class="contacts">
+          <h3>Local Contacts</h3>
+          <div class="contact-item"><span><strong>Jaci Normand</strong></span><span>Jaci@gonzalesla.com | 225-647-9547</span></div>
+        </div>
+      </div>
+
+      <!-- City of Covington -->
+      <div id="covington" class="jurisdiction-card">
+        <div class="card-header">
+          <h2>City of Covington</h2>
+          <p>Last Updated: August 19, 2025</p>
+          <div class="verification-info">Source: Covington City Floodplain Regulations</div>
+        </div>
+
+        <div class="alert success">
+          <strong>EC Required: Yes</strong><br>
+          Requirements: Flood zone A requires BFE + 1 foot on non-combustible stand
+        </div>
+
+        <div class="requirements-grid">
+          <div class="requirement-section">
+            <h3>Elevation Requirements</h3>
+            <div class="requirement-content">
+              <strong>Flood Zones:</strong> Zone A only<br>
+              <strong>Requirements:</strong> BFE + 1 foot on non-combustible stand<br>
+              <strong>When EC Needed:</strong> Can submit for reference
+              <div class="calculation-example">
+                <strong>Example:</strong><br>
+                BFE 69.0' + 1' freeboard - 66.5' grade = 3.5' → round up to 4'
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contacts">
+          <h3>Local Contacts</h3>
+          <div class="contact-item"><span><strong>Chris Brown</strong></span><span>cbrown@covla.com</span></div>
+          <div class="contact-item"><span><strong>Logan Fridley</strong></span><span>lfridley@covla.com | 770-385-2020</span></div>
+        </div>
+      </div>
+
+      <!-- East Baton Rouge Parish -->
+      <div id="ebr" class="jurisdiction-card">
+        <div class="card-header">
+          <h2>East Baton Rouge Parish</h2>
+          <p>Last Updated: August 19, 2025</p>
+          <div class="verification-info">Source: East Baton Rouge Parish Floodplain Management</div>
+        </div>
+
+        <div class="alert success">
+          <strong>EC Required: Yes</strong><br>
+          Complex Requirements: At or above existing finished floor OR with Proposed EC showing BFE + 1 foot compliance
+        </div>
+
+        <div class="requirements-grid">
+          <div class="requirement-section">
+            <h3>Elevation Requirements</h3>
+            <div class="requirement-content">
+              <strong>Requirements:</strong> At or above existing finished floor of structure<br>
+              <strong>Alternative:</strong> Can install lower with Proposed EC showing BFE + 1 foot compliance<br>
+              <strong>Zones:</strong> A, AE, and small portion of AO
+              <div class="calculation-example">
+                <strong>Example:</strong><br>
+                BFE 72.0' + 1' freeboard - 69.0' grade = 4.0' above ground
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contacts">
+          <h3>Local Contacts</h3>
+          <div class="contact-item"><span><strong>Permit Office</strong></span><span>225-389-3205</span></div>
+          <div class="contact-item"><span><strong>Rhondalyn Gerald</strong></span><span>rgerald@brla.gov</span></div>
+          <div class="contact-item"><span><strong>Robert L Joyner</strong></span><span>RLJOYNER@brla.gov</span></div>
+          <div class="contact-item"><span><strong>Bill Pousson</strong></span><span>BPOUSSON@brla.gov</span></div>
+        </div>
+      </div>
+
+      <!-- St. John the Baptist Parish -->
+      <div id="stjohn" class="jurisdiction-card">
+        <div class="card-header">
+          <h2>St. John the Baptist Parish</h2>
+          <p>Last Updated: August 19, 2025</p>
+          <div class="verification-info">Source: St. John Parish Floodplain Ordinance</div>
+        </div>
+
+        <div class="alert success">
+          <strong>EC Required: Yes</strong><br>
+          Process: Email property info before permit - may avoid EC if data on file
+        </div>
+
+        <div class="requirements-grid">
+          <div class="requirement-section">
+            <h3>Elevation Requirements</h3>
+            <div class="requirement-content">
+              <strong>Requirements:</strong> Generator must meet Design Flood Elevation (BFE + 1 foot)<br>
+              <strong>Flood Zones:</strong> AE & VE zones (no elevation regs for X zones - recommend 12-18" off ground)<br>
+              <strong>Special Notes:</strong> Can build EC requirement into quotes for AE/VE zones
+              <div class="calculation-example">
+                <strong>Example:</strong><br>
+                BFE 71.0' + 1' freeboard - 68.0' grade = 4.0' above ground
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contacts">
+          <h3>Local Contacts</h3>
+          <div class="contact-item"><span><strong>Dov Block</strong></span><span>d.block@stjohn-la.gov | 904-827-6820</span></div>
+        </div>
+      </div>
+
+      <!-- City of Mandeville -->
+      <div id="mandeville" class="jurisdiction-card">
+        <div class="card-header">
+          <h2>City of Mandeville</h2>
+          <p>Last Updated: August 19, 2025</p>
+          <div class="verification-info">Source: Mandeville City Floodplain Regulations</div>
+        </div>
+
+        <div class="alert success">
+          <strong>EC Required: Yes (property specific)</strong><br>
+          Freeboard: 2 feet | Process: City will determine if final EC needed
+        </div>
+
+        <div class="requirements-grid">
+          <div class="requirement-section">
+            <h3>Elevation Requirements</h3>
+            <div class="requirement-content">
+              <strong>Requirements:</strong> All equipment must be at BFE + 2 feet in any flood zone<br>
+              <strong>Process:</strong> City will determine if final EC needed (property specific)
+              <div class="calculation-example">
+                <strong>Example:</strong><br>
+                BFE 70.0' + 2' freeboard - 67.5' grade = 4.5' → round up to 5'
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contacts">
+          <h3>Local Contacts</h3>
+          <div class="contact-item"><span><strong>Lauren Brinkman</strong></span><span>lbrinkman@cityofmandeville.com</span></div>
+          <div class="contact-item"><span><strong>Alex Weiner</strong></span><span>aweiner@cityofmandeville.com | 985-624-3104</span></div>
+        </div>
+      </div>
+
+      <!-- New Orleans / Orleans Parish -->
+      <div id="neworleans" class="jurisdiction-card">
+        <div class="card-header">
+          <h2>New Orleans / Orleans Parish</h2>
+          <p>Last Updated: August 19, 2025</p>
+          <div class="verification-info">Source: New Orleans Floodplain Management</div>
+        </div>
+
+        <div class="alert success">
+          <strong>EC Required: Yes</strong><br>
+          Special Notes: City recommends 3+ feet above curb for flood insurance benefits
+        </div>
+
+        <div class="requirements-grid">
+          <div class="requirement-section">
+            <h3>Elevation Requirements</h3>
+            <div class="requirement-content">
+              <strong>Requirements:</strong> Generator must be at minimum base elevation of home<br>
+              <strong>Special Notes:</strong> City recommends 3+ feet above curb for flood insurance benefits<br>
+              <strong>When EC Needed:</strong> When installing lower than home base elevation OR due to property location
+              <div class="calculation-example">
+                <strong>Example:</strong><br>
+                Home base 73.0' - 70.0' grade = 3.0' above ground<br>
+                Recommend +3' above curb for benefits
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contacts">
+          <h3>Local Contacts</h3>
+          <div class="contact-item"><span><strong>Louise Williams</strong></span><span>floods@nola.gov | 504-658-7100</span></div>
+        </div>
+      </div>
+
+      <!-- Rapides Parish -->
+      <div id="rapides" class="jurisdiction-card">
+        <div class="card-header">
+          <h2>Rapides Parish</h2>
+          <p>Last Updated: August 19, 2025</p>
+          <div class="verification-info">Source: Rapides Parish Floodplain Management</div>
+        </div>
+
+        <div class="alert success">
+          <strong>EC Required: Yes (Pre-construction AND Final)</strong><br>
+          Freeboard: 1 foot | Important: Final EC must be reviewed by Floodplain Manager
+        </div>
+
+        <div class="requirements-grid">
+          <div class="requirement-section">
+            <h3>Elevation Requirements</h3>
+            <div class="requirement-content">
+              <strong>Flood Zones:</strong> All A zones<br>
+              <strong>Requirements:</strong><br>
+              • Pre-construction EC with permit showing ground elevation and benchmark<br>
+              • Final EC required before final inspection (must be reviewed by Floodplain Manager)
+              <div class="calculation-example">
+                <strong>Example:</strong><br>
+                BFE 69.0' + 1' freeboard - 66.0' grade = 4.0' above ground
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contacts">
+          <h3>Local Contacts</h3>
+          <div class="contact-item"><span><strong>Melissa Becker</strong></span><span>mbecker@rapc.info | 318-487-5401</span></div>
+        </div>
+      </div>
+
+      <!-- St. Tammany Parish -->
+      <div id="sttammany" class="jurisdiction-card">
+        <div class="card-header">
+          <h2>St. Tammany Parish</h2>
+          <p>Last Updated: August 19, 2025</p>
+          <div class="verification-info">Source: St. Tammany Parish Unified Development Code</div>
+        </div>
+
+        <div class="alert success">
+          <strong>EC Required: Yes</strong><br>
+          Freeboard: 1 foot | Strict: Pre-construction EC AND Final EC REQUIRED (final not optional)
+        </div>
+
+        <div class="requirements-grid">
+          <div class="requirement-section">
+            <h3>Elevation Requirements</h3>
+            <div class="requirement-content">
+              <strong>Flood Zones:</strong> A, AE, AH, AO, V zones require EC<br>
+              <strong>Requirements:</strong><br>
+              • Pre-construction EC required with permit<br>
+              • Final EC required after installation (not optional)<br>
+              • Drawing showing height above ground required<br>
+              <strong>Note:</strong> Benchmark certificates not accepted
+              <div class="calculation-example">
+                <strong>Example:</strong><br>
+                BFE 72.0' + 1' freeboard - 69.5' grade = 3.5' → round up to 4'
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contacts">
+          <h3>Local Contacts</h3>
+          <div class="contact-item"><span><strong>Mandeville Office</strong></span><span>985-898-2574</span></div>
+          <div class="contact-item"><span><strong>Slidell Office</strong></span><span>985-646-4166</span></div>
+          <div class="contact-item"><span><strong>Jennifer Landry</strong></span><span>jmlandry@stpgov.org</span></div>
+        </div>
+      </div>
+
+      <!-- West Baton Rouge Parish -->
+      <div id="wbr" class="jurisdiction-card">
+        <div class="card-header">
+          <h2>West Baton Rouge Parish</h2>
+          <p>Last Updated: August 19, 2025</p>
+          <div class="verification-info">Source: West Baton Rouge Parish Floodplain Ordinance</div>
+        </div>
+
+        <div class="alert success">
+          <strong>EC Required: Yes</strong><br>
+          Complex Requirements: Based on road conditions and flood zones. Professional certification required.
+        </div>
+
+        <div class="requirements-grid">
+          <div class="requirement-section">
+            <h3>Elevation Requirements</h3>
+            <div class="requirement-content">
+              <strong>Key Points:</strong><br>
+              • Minimum 12" above adjacent road OR 24" above surrounding land (if road is "built-up")<br>
+              • Special flood hazard areas: BFE + 1 foot minimum<br>
+              • Professional engineer/architect certification required
+              <div class="calculation-example">
+                <strong>Example (SFHA):</strong><br>
+                BFE 71.0' + 1' freeboard - 68.0' grade = 4.0' above ground<br>
+                Check road elevation requirements
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contacts">
+          <h3>Local Contacts</h3>
+          <div class="contact-item"><span><strong>Brandon Bourgoyne</strong></span><span>Brandon.Bourgoyne@wbrcouncil.org | 225-336-2434</span></div>
+        </div>
+      </div>
+
+      <!-- === ALL SECTIONS END === -->
     </div>
   </div>
 
